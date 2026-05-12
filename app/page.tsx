@@ -1,4 +1,5 @@
-import { Sprout, Microbe, Droplets, ArrowRight } from "lucide-react"; // Necesitarás instalar lucide-react o usar SVGs
+import { Sprout, Microscope, Droplets, ArrowRight, FlaskConical, Shovel, MapPin, Phone, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function BiotechnologyPage() {
   return (
@@ -19,7 +20,7 @@ export default function BiotechnologyPage() {
 
         <p className="max-w-2xl text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 mb-10">
           Implementamos soluciones biotecnológicas para aumentar el rendimiento de tus cultivos,
-          reduciendo el uso de químicos y optimizando la resistencia al cambio climático.
+          reduciendo el uso de químicos y optimizando la resistencia al clima.
         </p>
 
         <div className="flex flex-col gap-4 w-full sm:flex-row mb-20">
@@ -34,7 +35,7 @@ export default function BiotechnologyPage() {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
           <FeatureCard
-            icon={<Microbe className="text-emerald-500" />}
+            icon={<Microscope className="text-emerald-500" />} // Cambiado de Microbe a Microscope
             title="Biofertilizantes"
             description="Microorganismos que fijan nitrógeno de forma natural, nutriendo la planta sin agotar la tierra."
           />
@@ -44,22 +45,26 @@ export default function BiotechnologyPage() {
             description="Variedades desarrolladas para prosperar en condiciones de sequía extrema y calor."
           />
           <FeatureCard
-            icon={<Sprout className="text-green-500" />}
+            icon={<FlaskConical className="text-purple-500" />}
             title="Control de Plagas"
             description="Biopesticidas específicos que protegen tu inversión sin dañar a los insectos polinizadores."
           />
         </div>
       </main>
 
-      {/* Footer minimalista */}
-      <footer className="w-full py-8 border-t border-zinc-200 dark:border-zinc-800 flex justify-center text-sm text-zinc-500">
-        © 2026 BioAgro Solutions - Innovación para el campo.
+      {/* Footer Minimalista */}
+      <footer className="w-full py-12 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col items-center gap-4 text-sm text-zinc-500">
+        <div className="flex gap-6 mb-4">
+          <div className="flex items-center gap-1"><MapPin size={16} /> Almería, España</div>
+          <div className="flex items-center gap-1"><Phone size={16} /> +34 600 000 000</div>
+          <div className="flex items-center gap-1"><Mail size={16} /> contacto@bioagro.com</div>
+        </div>
+        <p>© 2026 BioAgro Solutions - Innovación para el campo.</p>
       </footer>
     </div>
   );
 }
 
-// Sub-componente para las tarjetas de beneficios
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
     <div className="p-8 bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-100 dark:border-zinc-800 text-center sm:text-left shadow-sm hover:shadow-md transition-shadow">
